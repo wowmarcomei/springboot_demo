@@ -12,19 +12,21 @@ spring:
       connection-timeout: 30000
       idle-timeout: 600000
   
-  # MyBatis配置
-  mybatis:
-    mapper-locations: classpath:mybatis/mapper/*.xml
-    type-aliases-package: com.demo.library.entity
-    configuration:
-      map-underscore-to-camel-case: true
-      cache-enabled: true
-      lazy-loading-enabled: true
-      multiple-result-sets-enabled: true
-      use-column-label: true
-      use-generated-keys: true
-      auto-mapping-behavior: partial
-      default-statement-timeout: 25
+# MyBatis配置
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.demo.library.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    lazy-loading-enabled: true
+    multiple-result-sets-enabled: true
+    use-column-label: true
+    use-generated-keys: true
+    auto-mapping-behavior: partial
+    default-statement-timeout: 25
+    # 日志实现
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 # 日志配置
 logging:
