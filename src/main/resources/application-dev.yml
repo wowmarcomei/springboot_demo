@@ -1,0 +1,33 @@
+# 开发环境配置
+spring:
+  # 数据源配置
+  datasource:
+    driver-class-name: org.opengauss.Driver
+    url: jdbc:opengauss://localhost:5432/library_db?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: library_user
+    password: library@2023
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+  
+  # MyBatis配置
+  mybatis:
+    mapper-locations: classpath:mybatis/mapper/*.xml
+    type-aliases-package: com.demo.library.entity
+    configuration:
+      map-underscore-to-camel-case: true
+      cache-enabled: true
+      lazy-loading-enabled: true
+      multiple-result-sets-enabled: true
+      use-column-label: true
+      use-generated-keys: true
+      auto-mapping-behavior: partial
+      default-statement-timeout: 25
+
+# 日志配置
+logging:
+  level:
+    com.demo.library.mapper: DEBUG
+    org.springframework.security: DEBUG
