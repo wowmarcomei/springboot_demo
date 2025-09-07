@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.demo.library.mapper.TestMapper">
+    
+    <!-- 结果映射 -->
+    <resultMap id="TestConnectionResult" type="com.demo.library.entity.TestConnection">
+        <result column="result" property="result"/>
+        <result column="current_time" property="currentTime"/>
+    </resultMap>
+    
+    <!-- 测试XML方式的SQL映射 -->
+    <select id="testXmlMapping" resultMap="TestConnectionResult">
+        SELECT 
+            'XML Mapping Test Successful' as result,
+            extract(epoch from now()) * 1000 as current_time
+    </select>
+    
+    <!-- 复杂查询示例 -->
+    <select id="getSystemInfo" resultMap="TestConnectionResult">
+        SELECT 
+            CONCAT('OpenGauss Version: ', version()) as result,
+            extract(epoch from now()) * 1000 as current_time
+    </select>
+    
+</mapper>

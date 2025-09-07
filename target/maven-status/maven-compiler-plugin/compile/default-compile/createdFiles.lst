@@ -1,0 +1,8 @@
+com\demo\library\controller\WelcomeController.class
+com\demo\library\controller\DatabaseTestController.class
+com\demo\library\LibraryApplication.class
+com\demo\library\entity\TestConnection.class
+com\demo\library\config\MyBatisConfig.class
+com\demo\library\controller\WelcomeController$WelcomeResponse.class
+com\demo\library\mapper\TestMapper.class
+META-INF\spring-configuration-metadata.json
